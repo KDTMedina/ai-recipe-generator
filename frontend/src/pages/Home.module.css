@@ -1,0 +1,179 @@
+.main { flex: 1; padding: 0 0 60px; }
+
+.hero {
+  text-align: center;
+  padding: 64px 24px 48px;
+  background: linear-gradient(180deg, var(--warm-white) 0%, var(--cream) 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 16px;
+}
+
+.heroTitle {
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.heroTitle em { color: var(--amber); font-style: italic; }
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--ink-light);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.inputSection { container: .container; max-width: 720px; margin: 40px auto 0; padding: 0 24px; }
+
+.card {
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.sectionTitle {
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+
+.prefs { margin-top: 20px; display: flex; flex-direction: column; gap: 12px; }
+
+.prefGroup { display: flex; align-items: flex-start; gap: 12px; }
+
+.prefLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-light);
+  padding-top: 6px;
+  min-width: 52px;
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.prefChip {
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-family: var(--font-body);
+  background: transparent;
+  color: var(--ink-light);
+  transition: all 0.15s;
+}
+
+.prefChip:hover { border-color: var(--amber); color: var(--amber); }
+.selected { border-color: var(--amber); background: var(--amber-pale); color: var(--amber); font-weight: 600; }
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.searchBtn, .aiBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  transition: all 0.2s;
+}
+
+.searchBtn {
+  background: var(--ink);
+  color: var(--cream);
+  flex: 1;
+}
+.searchBtn:hover:not(:disabled) { background: var(--ink-light); transform: translateY(-1px); }
+
+.aiBtn {
+  background: linear-gradient(135deg, var(--amber), var(--terracotta));
+  color: white;
+  flex: 1.2;
+}
+.aiBtn:hover:not(:disabled) { filter: brightness(1.08); transform: translateY(-1px); }
+
+.searchBtn:disabled, .aiBtn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.spin { animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.error {
+  max-width: 720px;
+  margin: 16px auto;
+  padding: 12px 20px;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  color: #dc2626;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.results { max-width: 1200px; margin: 40px auto 0; padding: 0 24px; }
+
+.resultsHeader { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+
+.resultsTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.3rem;
+  color: var(--ink);
+}
+
+.count {
+  font-size: 0.8rem;
+  font-family: var(--font-body);
+  color: var(--ink-light);
+  font-weight: 400;
+  background: var(--border);
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+
+.regenerate {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-family: var(--font-body);
+  background: var(--warm-white);
+  color: var(--ink-light);
+  transition: all 0.15s;
+}
+.regenerate:hover { border-color: var(--amber); color: var(--amber); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.empty {
+  text-align: center;
+  padding: 80px 24px;
+  color: var(--ink-light);
+}
+.empty span { font-size: 3rem; display: block; margin-bottom: 16px; }
+.empty p { font-size: 0.95rem; max-width: 360px; margin: 0 auto; }
