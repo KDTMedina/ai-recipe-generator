@@ -60,11 +60,19 @@ export default function RecipeCard({ recipe, variant = "spoonacular" }) {
           </div>
         )}
 
-        {recipe.sourceUrl && (
+        {/*{recipe.sourceUrl && (
           <a href={recipe.sourceUrl} target="_blank" rel="noopener noreferrer" className={styles.viewLink}>
             View Full Recipe <ExternalLink size={13} />
           </a>
-        )}
+        )}*/}
+
+        <a href={`https://spoonacular.com/recipes/${recipe.title?.toLowerCase().replace(/\s+/g, "-")}-${recipe.id}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.viewLink}
+        >
+          View Full Recipe <ExternalLink size={13} />
+        </a>
       </div>
     </div>
   );
